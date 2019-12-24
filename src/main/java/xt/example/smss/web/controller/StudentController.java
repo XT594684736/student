@@ -48,11 +48,11 @@ public class StudentController {
     @PostMapping("/add")
     @ApiOperation(value = "添加学生")
     // @ApiImplicitParam(name = "stuID", value = "学号", paramType = "query", dataType= "int")//int 会自动转换成Integer
-    @ApiImplicitParams({
-            //注意多个值之间的“,”使用方式类似于数组
-            @ApiImplicitParam(name = "stuID", value = "学号", paramType = "query", dataType = "int",required = true),
-            @ApiImplicitParam(name = "name", value = "学生姓名", paramType = "query", dataType = "String",required = true)
-    })
+//    @ApiImplicitParams({
+//            //注意多个值之间的“,”使用方式类似于数
+//            @ApiImplicitParam(name = "stuID", value = "学号", paramType = "query", dataType = "int",required = true),
+//            @ApiImplicitParam(name = "name", value = "学生姓名", paramType = "query", dataType = "String",required = true)
+//    })
     public Message add(Student student) { //根据学生主键id添加学生
         return MessageUtil.success("添加学生成功");//当内容为String类型时，o：代表一个提示信息
     }
@@ -60,10 +60,11 @@ public class StudentController {
     //删除
     @ApiOperation(value = "删除学生")
     @GetMapping("/delete")
-    @ApiImplicitParams({
-            @ApiImplicitParam(name = "stuID", value = "学号", paramType = "query", dataType = "int",required = true),
-            @ApiImplicitParam(name = "name", value = "学生姓名", paramType = "query", dataType = "String",required = true)
-    })
+    //当传入参数为对象时，下列代码即可省略，否则，重名的变量会进行覆盖，例如：此方法中的name 会覆盖了 student对象中的name
+//    @ApiImplicitParams({
+//            @ApiImplicitParam(name = "stuID", value = "学号", paramType = "query", dataType = "int",required = true),
+//            @ApiImplicitParam(name = "name", value = "学生姓名", paramType = "query", dataType = "String",required = true)
+//    })
     public Message delete(Student student) {
         return MessageUtil.success("删除学生成功");
     }

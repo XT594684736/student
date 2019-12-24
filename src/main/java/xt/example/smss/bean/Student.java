@@ -7,11 +7,11 @@ import java.io.Serializable;
 
 @ApiModel
 public class Student implements Serializable {
-    @ApiModelProperty(value = "学生ID",required = true)
+    @ApiModelProperty(value = "st学生ID",required = true)
     private int id;
-    @ApiModelProperty(value = "学生姓名",required = true)
+    @ApiModelProperty(value = "st学生姓名",required = true)
     private String name;
-    @ApiModelProperty(value = "学生分数",required = true)
+    @ApiModelProperty(value = "st学生分数",required = true)
     private double score;
 
     //getter 和 setter
